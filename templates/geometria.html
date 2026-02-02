@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1>Geometria</h1>
+
+<div class="calculos">
+
+    <div class="card_operacao">
+        <h2>Triângulo</h2>
+        <h3>Área</h3>
+
+        <form class="form-operacoes" action="{{ url_for('triangulo') }}" method="post">
+            <label>
+                <input placeholder="Digite um número" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="operador">*</p>
+
+            <label>
+                <input placeholder="Digite um número" name="form-n2" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if area_t is defined %}
+                   {{ area_t }}
+                {% else %}
+                {% endif %}
+            </p>
+        </form>
+        <h3>Perimetro</h3>
+        <form class="form-operacoes" action="{{ url_for('triangulo') }}" method="post">
+            <label>
+                <input placeholder="Digite um número" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="operador">+</p>
+
+            <label>
+                <input placeholder="Digite um número" name="form-n2" class="form-control w-100">
+            </label>
+
+             <p class="operador">+</p>
+
+            <label>
+                <input placeholder="Digite um número" name="form-n3" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if perimetro_t is defined %}
+                    {{ perimetro_t }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Resolver</button>
+        </form>
+
+    </div>
+
+    <div class="card_operacao">
+        <h2>Circulo</h2>
+        <h3>Área</h3>
+         <form class="form-operacoes" action="{{ url_for('circulo') }}" method="post">
+            <label>
+                <input placeholder="Digite um número" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if area_c is defined %}
+                    {{ area_c }}
+                {% else %}
+                {% endif %}
+            </p>
+         </form>
+        <h3>Perimetro</h3>
+        <form class="form-operacoes" action="{{ url_for('circulo') }}" method="post">
+            <label>
+                <input placeholder="Digite um número" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if perimetro_c is defined %}
+                    {{ perimetro_c }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Resolver</button>
+        </form>
+
+    </div>
+
+    <div class="card_operacao">
+        <h2>Quadrado</h2>
+        <h3>Área</h3>
+        <form class="form-operacoes" action="{{ url_for('quadrado') }}" method="post">
+            <label>
+                <input placeholder="Digite um número" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="operador">x</p>
+
+            <label>
+                <input placeholder="Digite um número" name="form-n2" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if area_q is defined %}
+                    {{ area_q }}
+                {% else %}
+                {% endif %}
+            </p>
+        </form>
+        <h3>Perimetro</h3>
+        <form class="form-operacoes" action="{{ url_for('quadrado') }}" method="post">
+            <label>
+                <input placeholder="Digite um número" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="operador">x</p>
+
+            <label>
+                <input placeholder="Digite um número" name="form-n2" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if perimetro_q is defined %}
+                    {{ perimetro_q }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Resolver</button>
+        </form>
+
+    </div>
+
+    <div class="card_operacao">
+        <h2>Hexágono</h2>
+        <h3>Área</h3>
+        <form class="form-operacoes" action="{{ url_for('hexagono') }}" method="post">
+            <label>
+                <input placeholder="Digite um número" name="form-n1" class="form-control w-100">
+            </label>
+
+            <label>
+                <input placeholder="Digite o número da raiz" name="form-n2" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if hexagono is defined %}
+                    {{ hexagono }}
+                {% else %}
+                {% endif %}
+            </p>
+
+        </form>
+
+        <h3>Perimetro</h3>
+        <form class="form-operacoes" action="{{ url_for('hexagono') }}" method="post">
+            <label>
+                <input placeholder="Digite um número" name="form-n1" class="form-control w-100">
+            </label>
+
+
+            <p class="resultado">
+                {% if perimetro_h is defined %}
+                    {{ perimetro_h }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Resolver</button>
+        </form>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
