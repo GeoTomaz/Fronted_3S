@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<div class="calculos">
+    <div class="card_login card d-flex justify-content-center align items-center p-4 gap-3">
+        <h3>Login</h3>
+        <label>
+            CPF:
+            <input placeholder="Digite o CPF" type="number" name="form-cpf" class="form-control w-100">
+        </label>
+
+        <label>
+            Senha:
+            <input placeholder="Digite a senha" type="password" name="form-cpf" class="form-control w-100">
+        </label>
+
+        <button type="submit" class="btn btn-info w-100">Entrar</button>
+    </div>
+</div>
+
+{% endblock %}
